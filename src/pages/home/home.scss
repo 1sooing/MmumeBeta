@@ -3,10 +3,19 @@
   page-home {
     @include page-background(#ffffff, $background-color);
   }
+  .home-cloud-wrapper {
+    position: absolute;
+    top: 10%;
+    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1.5s; /* Firefox < 16 */
+    -ms-animation: fadein 1.5s; /* Internet Explorer */
+    -o-animation: fadein 1.5s; /* Opera < 12.1 */
+    animation: fadein 1.5s;
+  }
   .home-garden{
     position: relative;
     left: 2.5%;
-    width: 95%;
+    width: 98%;
     height:50%;
     padding-top: 25%;
     box-sizing: border-box;
@@ -16,9 +25,14 @@
     position: relative;
     width: 100%;
     text-align: center;
-    animation: blinker 1.5s linear infinite;
     color: $main-color;
     font-weight: 100;
+    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1.5s; /* Firefox < 16 */
+    -ms-animation: fadein 1.5s; /* Internet Explorer */
+    -o-animation: fadein 1.5s; /* Opera < 12.1 */
+    animation: fadein 1.5s;
+    //animation: blinker 1.5s linear infinite;
   }
   .home-garden-map{
     position: relative;
@@ -31,24 +45,24 @@
     z-index:10;
   }
   .home-groupgarden {
-    top: 0%;
+    top: -2%;
     left:35%;
     @include common;
   }
   .home-mygarden {
     top: 25%;
-    left: 20%;
+    left: 22%;
     @include common;
     z-index:30;
   }
   .home-board {
-    top: 19%;
-    right: 8%;
+    top: 20%;
+    right: 4%;
     @include common;
   }
   .home-pharmacy {
     bottom: 10%;
-    left: 2%;
+    left: 0%;
     @include common;
   }
   .home-content {

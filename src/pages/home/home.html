@@ -1,9 +1,12 @@
+<div *ngIf="showCloudFlag" class="home-cloud-wrapper">
+  <img src="../../assets/images/0000_i_cloud.png" alt="Hi there:)">
+</div>
 <div class="home-garden" [style.top]="cssTopGarden" >
   <div class="home-garden-map">
     <img src="assets/images/0000_i_myGarden.png"
          alt="내 가든"
          class="home-mygarden"
-         style="max-height: 55%;"
+         style="max-height: 60%;"
          (click)="clickMygarden()">
     <img src="assets/images/0000_i_groupGarden_noact.png"
          alt="그룹 가든"
@@ -21,7 +24,7 @@
          style="max-height: 45%;"
          (click)="clickPharmacy()">
   </div>
-  <div *ngIf="isLogin && showFlag" class="home-garden-saying">
+  <div *ngIf="isLogin && showSayingFlag" class="home-garden-saying">
     <p>{{ userInfo.id }}님 어서오세요 :)</p>
   </div>
 </div>

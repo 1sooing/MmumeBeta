@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Http, Response, Headers } from "@angular/http";
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 

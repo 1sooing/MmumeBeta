@@ -15,7 +15,8 @@ import { LoadingService } from '../../services/loadingService';
 export class HomePage {
   public userInfo:userModel = new userModel('','',false,'','',0,'',false,'','','');
   public isLogin: boolean = false;
-  public showFlag:boolean = false;
+  public showSayingFlag:boolean = false;
+  public showCloudFlag:boolean = false;
   public cssTopGarden: string = '0%';
   constructor(
      public navCtrl: NavController
@@ -41,10 +42,13 @@ export class HomePage {
               (data) => {
                 this.zone.run(() => {
                   Object.assign(this.userInfo, <userModel>data[Object.keys(data)[0]]);
+                  setTimeout(() => {
+                    this.showCloudFlag = true;
+                  }, 2000);
                 });
               });
           setTimeout(() => {
-            this.showFlag = true;
+            this.showSayingFlag = true;
           }, 1000);
         } else {
           //this.authService.doLogout(); 이 라인 키면 오류나는이유가 자꾸 자식이 부모를 호출함
@@ -77,7 +81,8 @@ export class HomePage {
     alert('Group Garden');
   }
   clickPharmacy() {
-    this.authService.doLogout();
+    this.navCtrl.push('PharmacyHomePage');
+    //this.authService.doLogout();
   }
   clickBoard() {
     alert('Board');
