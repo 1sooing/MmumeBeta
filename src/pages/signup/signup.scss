@@ -1,0 +1,164 @@
+@import '../../theme/common';
+.platform-android {
+  page-signup {
+    @include page-background(#ffffff, $background-color);
+  }
+  .back-button-wrapper {
+    position: absolute;
+    display: inline-block;
+    top: 2%;
+    left: 2%;
+    z-index: 10;
+  }
+  .sg-main-content {
+    color: $main-color;
+    padding: 10%;
+    padding-top:30%;
+  }
+  .sg-title {
+    font-family: Noto Sans KR;
+    letter-spacing: 0.3rem;
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+  .sg-input {
+    height: 35px;
+    width: 200px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid $main-color;
+    border-radius: 50px;
+    font-weight: 200;
+    color: $main-color;
+  }
+  .sg-input-invalid{
+    height: 35px;
+    width: 200px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid #ee8580;
+    border-radius: 50px;
+    font-weight: 200;
+    color: $main-color;
+  }
+  .password:-ms-input-placeholder {
+    letter-spacing: 5px;
+  }
+  .password::-webkit-input-placeholder {
+    letter-spacing: 5px;
+  }
+  .password::-moz-placeholder {
+    letter-spacing: 5px;
+  }
+  .sg-button{
+    background-color: transparent;
+    margin: auto;
+  }
+  .sg-errorMessage{
+    color:#ee8580;
+    margin-top: 10px;
+  }
+  button.sg-circle:enabled {
+    overflow: hidden;
+    background-image: url(../../assets/images/0000_btn_beforeCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:enabled:active {
+    background-image: url(../../assets/images/0000_btn_afterCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:disabled {
+    overflow: hidden;
+    background-image: url(../../assets/images/0000_btn_errorCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+  }
+}
+
+.platform-ios {
+  page-signup {
+    @include page-background(#ffffff, $background-color);
+  }
+  .back-button-wrapper {
+    position: absolute;
+    display: inline-block;
+    top: 2%;
+    left: 2%;
+    z-index: 10;
+  }
+  .sg-main-content {
+    color: $main-color;
+    padding: 10%;
+    padding-top:30%;
+  }
+  .sg-title {
+    font-family: Noto Sans KR;
+    letter-spacing: 0.3rem;
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+  .sg-input {
+    height: 35px;
+    width: 200px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid $main-color;
+    border-radius: 50px;
+    font-weight: 200;
+    color: $main-color;
+  }
+  .sg-input-invalid{
+    height: 35px;
+    width: 200px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid #ee8580;
+    border-radius: 50px;
+    font-weight: 200;
+    color: $main-color;
+  }
+  .password:-ms-input-placeholder {
+    letter-spacing: 5px;
+  }
+  .password::-webkit-input-placeholder {
+    letter-spacing: 5px;
+  }
+  .password::-moz-placeholder {
+    letter-spacing: 5px;
+  }
+  .sg-button{
+    background-color: transparent;
+    margin: auto;
+  }
+  .sg-errorMessage{
+    color:#ee8580;
+    margin-top: 10px;
+  }
+  button.sg-circle:enabled {
+    overflow: hidden;
+    background-image: url(../../assets/images/0000_btn_beforeCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:enabled:active {
+    background-image: url(../../assets/images/0000_btn_afterCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:disabled {
+    overflow: hidden;
+    background-image: url(../../assets/images/0000_btn_errorCheck_b.svg);
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+  }
+}

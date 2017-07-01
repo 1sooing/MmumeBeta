@@ -1,0 +1,36 @@
+<div class="home-garden" [style.top]="cssTopGarden" >
+  <div class="home-garden-map">
+    <img src="assets/images/0000_i_myGarden.png"
+         alt="내 가든"
+         class="home-mygarden"
+         style="max-height: 55%;"
+         (click)="clickMygarden()">
+    <img src="assets/images/0000_i_groupGarden_noact.png"
+         alt="그룹 가든"
+         class="home-groupgarden"
+         style="max-height: 35%;"
+         (click)="clickGroupgarden()">
+    <img src="assets/images/0000_i_board_noact.png"
+         alt="게시판"
+         class="home-board"
+         style="max-height: 45%;"
+         (click)="clickBoard()">
+    <img src="assets/images/0000_i_pharmacy.png"
+         alt="약국"
+         class="home-pharmacy"
+         style="max-height: 45%;"
+         (click)="clickPharmacy()">
+  </div>
+  <div *ngIf="isLogin && showFlag" class="home-garden-saying">
+    <p>{{ userInfo.id }}님 어서오세요 :)</p>
+  </div>
+</div>
+
+<div *ngIf="!isLogin" class="home-content" style="margin-top:-20px;">
+  <button ion-button round outline class="button-login" style="margin-top: 28%;" (click)="clickButtonLogin()" >
+    Log in
+  </button>
+  <button ion-button round outline class="button-login" style="margin-top: 3%;" (click)="clickButtonSignTerms()" >
+    Sign up
+  </button>
+</div>

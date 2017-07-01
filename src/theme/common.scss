@@ -1,0 +1,91 @@
+$background-color: #C7E6EB;
+$main-color : #57B4AA;
+$red-color : #e93a3a;
+$input-placeholder-font: 0.8em;
+$input-placeholder-opacity: 0.5;
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../assets/fonts/NotoSans-Thin.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../assets/fonts/NotoSans-Light.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/NotoSans-DemiLight.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/NotoSans-Regular.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/NotoSans-Medium.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/NotoSans-Bold.woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/NotoSans-Black.woff');
+}
+
+@mixin page-background($param1, $param2) {
+  background: $param2; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(top, $param1, $param2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, $param1, $param2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, $param1, $param2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, $param1, $param2); /* Standard syntax */
+  position: relative;
+}
+
+@-moz-keyframes spin_LR { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin_LR { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin_LR { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin_RL { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin_RL { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin_RL { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+input:-ms-input-placeholder {
+  color: $main-color;
+  font-size: $input-placeholder-font;
+  opacity: $input-placeholder-opacity;
+}
+input::-webkit-input-placeholder {
+  color: $main-color;
+  font-size: $input-placeholder-font;
+  opacity: $input-placeholder-opacity;
+}
+input::-moz-placeholder {
+  color: $main-color;
+  font-size: $input-placeholder-font;
+  opacity: $input-placeholder-opacity;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+html {
+  font-size : 10px;
+}
+body {
+}

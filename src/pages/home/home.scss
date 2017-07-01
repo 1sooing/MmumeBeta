@@ -1,0 +1,128 @@
+@import '../../theme/common';
+.platform-android {
+  page-home {
+    @include page-background(#ffffff, $background-color);
+  }
+  .home-garden{
+    position: relative;
+    left: 2.5%;
+    width: 95%;
+    height:50%;
+    padding-top: 25%;
+    box-sizing: border-box;
+    transition: all linear 0.25s;
+  }
+  .home-garden-saying {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    animation: blinker 1.5s linear infinite;
+    color: $main-color;
+    font-weight: 100;
+  }
+  .home-garden-map{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+  @mixin common{
+    position: absolute;
+    box-sizing: border-box;
+    z-index:10;
+  }
+  .home-groupgarden {
+    top: 0%;
+    left:35%;
+    @include common;
+  }
+  .home-mygarden {
+    top: 25%;
+    left: 20%;
+    @include common;
+    z-index:30;
+  }
+  .home-board {
+    top: 19%;
+    right: 8%;
+    @include common;
+  }
+  .home-pharmacy {
+    bottom: 10%;
+    left: 2%;
+    @include common;
+  }
+  .home-content {
+    position: relative;
+    padding-top: 5%;
+  }
+  .button-login {
+    width: 60%;
+    left: 20%;
+    color: $main-color;
+    border-color: $main-color;
+    height: 43px;
+  }
+}
+
+.platform-ios {
+  page-home {
+    @include page-background(#ffffff, $background-color);
+  }
+  .home-garden{
+    position: relative;
+    left: 2.5%;
+    width: 95%;
+    height:50%;
+    padding-top: 19%;
+    box-sizing: border-box;
+  }
+  .home-garden-saying {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    animation: blinker 1.5s linear infinite;
+    color: $main-color;
+  }
+  .home-garden-map{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+  @mixin common{
+    position: absolute;
+    box-sizing: border-box;
+    z-index:10;
+  }
+  .home-groupgarden {
+    top: 0%;
+    left:35%;
+    @include common;
+  }
+  .home-mygarden {
+    top: 25%;
+    left: 20%;
+    @include common;
+    z-index:30;
+  }
+  .home-board {
+    top: 19%;
+    right: 8%;
+    @include common;
+  }
+  .home-pharmacy {
+    bottom: 10%;
+    left: 2%;
+    @include common;
+  }
+  .home-content {
+    position: relative;
+    padding-top: 5%;
+  }
+  .button-login {
+    width: 60%;
+    left: 20%;
+    color: $main-color;
+    border-color: $main-color;
+    height: 43px;
+  }
+}

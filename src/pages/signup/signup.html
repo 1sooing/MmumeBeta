@@ -1,0 +1,59 @@
+<div class="back-button-wrapper" (click)="closeWindow()" >
+  <img src="../../assets/images/0000_btn_back.png" height="24" width="24"/>
+</div>
+<div class="sg-main-content" text-center>
+  <div class="sg-title">sign up</div>
+  <form (ngSubmit)="signup(f)" #f="ngForm">
+    <div style="margin-top: 20%;">
+      <input
+        type="text"
+        [ngClass]="(!name.valid && name.touched)? 'sg-input-invalid':'sg-input'"
+        placeholder="NAME"
+        text-center
+        ngModel
+        name="userName"
+        minlength="2"
+        maxlength="16"
+        #name="ngModel"
+        required>
+      <div *ngIf="!name.valid && name.touched" class="sg-errorMessage">2글자 이상 16글자 이내로<br>이름을 작성해주세요.</div>
+    </div>
+    <div style="margin-top: 4%;">
+      <input
+        type="email"
+        [ngClass]="(!email.valid && email.touched)? 'sg-input-invalid':'sg-input'"
+        placeholder="@"
+        text-center
+        ngModel
+        name="email"
+        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        #email="ngModel"
+        required
+      >
+      <div *ngIf="!email.valid && email.touched" class="sg-errorMessage">이메일이 올바르지 않습니다.</div>
+    </div>
+    <div style="margin-top: 4%;">
+      <input
+        type="password"
+        [ngClass]="(!password.valid && password.touched)? 'sg-input-invalid password':'sg-input password'"
+        placeholder="●●●●"
+        text-center
+        ngModel
+        name="password"
+        minlength="6"
+        maxlength="32"
+        #password="ngModel"
+        required>
+      <div *ngIf="!password.valid && password.touched" class="sg-errorMessage">비밀번호가 너무 짧아요.<br>6자 이상으로 입력해주세요!</div>
+    </div>
+    <div class="sg-button" style="margin-top: 15%;">
+      <button
+        type="submit"
+        class="sg-circle"
+        text-center
+        [disabled]="!f.valid && ( name.touched || email.touched || password.touched)">
+      </button>
+    </div>
+    <div class="sg-errorMessage">{{errorMessage}}</div>
+  </form>
+</div>

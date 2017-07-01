@@ -1,0 +1,28 @@
+<div class="back-button-wrapper" (click)="closeWindow()" >
+  <img src="../../assets/images/0000_btn_back.png" height="24" width="24"/>
+</div>
+
+<div class="st-main-content" text-center>
+  <div class="st-title">sign up</div>
+
+  <div class="serviceTerms" style="margin-top: 25%;">
+    <div class="detailTerms" style="margin-top: 0.1px;">
+      <div class ="coverCircle" (click)="toggle()"><div [ngClass]="visible?'checkedCircle':'circle'"></div></div>
+      <div class="terms">서비스 이용약관</div>
+      <button ion-button round outline class="st-button">내용보기</button>
+    </div>
+    <br/>
+    <div class="detailTerms" style="margin-top: -10px;">
+      <div class ="coverCircle" (click)="toggle2()"><div [ngClass]="visibleSecond?'checkedCircle':'circle'"></div></div>
+      <div class="terms">개인정보 보호정책</div>
+      <button ion-button round outline class="st-button">내용보기</button>
+    </div>
+  </div>
+  <div class="signTerm-buttons" style="margin-top:50%;">
+    <button ion-button round outline class="button-signTerms" style="margin-top: 3%;" [disabled]="isChecked()" ><img src="assets/images/1090_i_gmail.png" height="30" width="30" style="margin-left: -24%"/><div style="margin-left:25%;">구글로 회원가입</div></button>
+    <button ion-button round outline class="button-signTerms" style="margin-top: 3%;" [disabled]="isChecked()" (click)="clickButtonSignup()"><img src="assets/images/1090_i_beforeEmail.png" height="30" width="30" style="margin-left: -17%"/><div style="margin-left:25%;">이메일로 회원가입</div></button>
+  </div>
+  <div class="userLogin" (click)="clickButtonLogin()">
+    <div class="ul-front">이미 계정이 있다면&nbsp;<span class="ul-back"> 로그인하기</span></div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="back-button-wrapper" (click)="closeWindow()" >
+  <img src="../../assets/images/0000_btn_back.png" height="24" width="24"/>
+</div>
+
+<div class="lg-main-content" text-center>
+  <div class="lg-title">login</div>
+  <div style="margin-top: 25%">
+    <form (ngSubmit)="login(f)" #f="ngForm">
+      <div style="margin-top:15px;">
+        <input
+          type="email"
+          [ngClass]="(!email.valid && email.touched|| errorCode == 'auth/wrong-email')? 'lg-input-invalid':'lg-input'"
+          placeholder="@"
+          text-center
+          ngModel
+          name="email"
+          #email="ngModel"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          required
+        >
+      </div>
+      <div style="margin-top: 15px;">
+        <input
+          type="password"
+          [ngClass]="(!password.valid && password.touched || errorCode == 'auth/wrong-password')? 'lg-input-invalid password':'lg-input password'"
+          placeholder="●●●●"
+          text-center
+          ngModel
+          name="password"
+          #password="ngModel"
+          minlength="6"
+          maxlength="32"
+          required>
+      </div>
+      <div style="margin-top:30%;">
+        <button
+          type="submit"
+          class="lg-circle"
+          text-center
+          [disabled]="(!f.valid) && ( email.touched || password.touched)">
+        </button>
+      </div>
+      <div *ngIf="(!email.valid && email.touched)||(!password.valid && password.touched)" class="lg-errorMessage">이메일이나 비밀번호 형식이 잘못되었습니다</div>
+      <div class="lg-errorMessage">{{errorMessage}}</div>
+    </form>
+  </div>
+</div>
