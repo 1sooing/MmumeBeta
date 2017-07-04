@@ -78,6 +78,26 @@
   page-signup-email-confirmation {
     @include page-background(#ffffff, $background-color);
   }
+  .ec-rotate-image1 {
+    position: absolute;
+    top: 45%;
+    left: 46%;
+    width: 2.5rem;
+    height: 2.5rem;
+    -webkit-animation:spin_LR 4s linear infinite;
+    -moz-animation:spin_LR 4s linear infinite;
+    animation:spin_LR 4s linear infinite;
+  }
+  .ec-rotate-image2 {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    -webkit-animation:spin_RL 4s linear infinite;
+    -moz-animation:spin_RL 4s linear infinite;
+    animation:spin_RL 4s linear infinite;
+  }
   .ec-main-image-wrapper {
     position: relative;
     width: 100%;

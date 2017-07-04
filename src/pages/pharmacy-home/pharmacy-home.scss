@@ -5,5 +5,7 @@
   }
 }
 .platform-ios {
-
+  page-pharmacy-home {
+    @include page-background(#ffffff, $background-color);
+  }
 }
