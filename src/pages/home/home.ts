@@ -81,8 +81,8 @@ export class HomePage {
     alert('Group Garden');
   }
   clickPharmacy() {
-    this.navCtrl.push('PharmacyHomePage');
-    //this.authService.doLogout();
+    //this.navCtrl.push('PharmacyHomePage');
+    this.authService.doLogout();
   }
   clickBoard() {
     alert('Board');
