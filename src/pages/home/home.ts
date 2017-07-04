@@ -73,7 +73,7 @@ export class HomePage {
       if(user != null) {
         this.navCtrl.push('MygardenHomePage');
       } else {
-        this.navCtrl.push('examplePage');
+        this.navCtrl.push('MygardenHomePage');
       }
      });
   }
