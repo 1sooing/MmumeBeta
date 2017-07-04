@@ -7,6 +7,7 @@ import { userModel } from '../../models/userModel';
 /* 서비스 선언 */
 import { AuthService } from '../../services/authService';
 import { LoadingService } from '../../services/loadingService';
+import { UsersSerivce } from '../../services/usersSerivce';
 
 @Component({
   selector: 'page-home',
@@ -22,6 +23,7 @@ export class HomePage {
      public navCtrl: NavController
     ,public loadingCtrl: LoadingService
     ,private authService: AuthService
+    ,private usersService: UsersSerivce
     ,private zone: NgZone) {
   }
   ionViewDidLoad() {
@@ -37,16 +39,14 @@ export class HomePage {
         if (user.emailVerified == true ) {
           this.isLogin = true;
           this.cssTopGarden = '20%';
-          this.authService.getUserInfo({email: user.email})
-            .subscribe(
-              (data) => {
-                this.zone.run(() => {
-                  Object.assign(this.userInfo, <userModel>data[Object.keys(data)[0]]);
-                  setTimeout(() => {
-                    this.showCloudFlag = true;
-                  }, 2000);
-                });
-              });
+          this.usersService.setUserInfo({email: user.email});
+          this.zone.run(() => {
+            //Object.assign(this.userInfo, <userModel>this.usersService.userInfo);
+            this.userInfo = this.usersService.userInfo;
+            setTimeout(() => {
+              this.showCloudFlag = true;
+            }, 2000);
+          });
           setTimeout(() => {
             this.showSayingFlag = true;
           }, 1000);

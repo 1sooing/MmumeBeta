@@ -12,6 +12,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from '../services/authService';
 import { LoadingService } from '../services/loadingService';
+import { MmumesService } from '../services/mmumesService';
+import { UsersSerivce } from '../services/usersSerivce';
 
 export const firebaseConfig={
   apiKey: "AIzaSyDBxXx4C3dQIe0EWBQTzWNrUavzx-Ja51E",
@@ -44,6 +46,8 @@ export const firebaseConfig={
     SplashScreen,
     AuthService,
     LoadingService,
+    MmumesService,
+    UsersSerivce,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

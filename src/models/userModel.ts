@@ -23,7 +23,4 @@ export class userModel {
     this.selectedMmume = selectedMmume;
     this.date = date;
   }
-  getMaskName(): string {
-    return this.id;
-  }
 }

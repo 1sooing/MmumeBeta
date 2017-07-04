@@ -3,7 +3,29 @@
   page-mygarden-home {
     @include page-background(#ffffff, $background-color);
   }
+  .mygarden-home-mmumes-wrapper {
+    position: relative;
+    align-content: center;
+  }
+  .mygarden-home-mmumes {
+
+  }
+  .mygarden-home-mmume-single {
+
+  }
+  .mygarden-home-mygarden-wrapper {
+  }
+  .mygarden-home-mygarden {
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    bottom: 14%;
+    box-sizing: border-box;
+  }
 }
+
 .platform-ios {
 
 }
