@@ -3,6 +3,11 @@
   page-pharmacy-home {
     @include page-background(#ffffff, $background-color);
   }
+  .pm-logout-button-wrapper {
+    text-align: center;
+    width: 100%;
+    padding-top: 20%;
+  }
 }
 .platform-ios {
   page-pharmacy-home {

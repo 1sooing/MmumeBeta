@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AuthService } from '../../services/authService'
 /**
  * Generated class for the PharmacyHomePage page.
  *
@@ -14,7 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PharmacyHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController
+    ,public navParams: NavParams
+    ,public authService: AuthService) {
   }
 
   ionViewDidLoad() {
@@ -22,5 +25,14 @@ export class PharmacyHomePage {
   }
   closeWindow() {
     this.navCtrl.pop();
+  }
+  logOut() {
+    this.authService.doLogout().then(() => {
+        console.log("complete logOut");
+      },
+      (error) => {
+        
+      });
+    this.navCtrl.popToRoot();
   }
 }

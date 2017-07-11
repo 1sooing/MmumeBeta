@@ -12,5 +12,97 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import '../theme/common';
 
+.platform-android {
+  /* home */
 
+  /* login */
+  .lg-circle {
+    background: url('../assets/images/0000_btn_beforeCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  .lg-circle:enabled:active {
+    background: url('../assets/images/0000_btn_afterCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  .lg-circle:disabled {
+    background: url('../assets/images/0000_btn_errorCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+    opacity:1;
+  }
+  /* mygarden-home */
+
+  /* pharmacy-home */
+
+  /* signup */
+  button.sg-circle:enabled {
+    overflow: hidden;
+    background: url('../assets/images/0000_btn_beforeCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:enabled:active {
+    background: url('../assets/images/0000_btn_afterCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.sg-circle:disabled {
+    overflow: hidden;
+    background: url('../assets/images/0000_btn_errorCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+  }
+
+  /* signup-email-confirmation */
+  button.ec-circle:enabled {
+    overflow: hidden;
+    background: url('../assets/images/0000_btn_beforeCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.ec-circle:enabled:active {
+    background: url('../assets/images/0000_btn_afterCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+  button.ec-circle:disabled {
+    overflow: hidden;
+    background: url('../assets/images/0000_btn_errorCheck_b.svg') no-repeat;
+    border-color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+
+  /* signup-terms */
+  .circle{
+    overflow: hidden;
+    background-image: url('../assets/images/0000_btn_beforeCheck_s.svg');
+    height: 25px;
+    width: 25px;
+    box-sizing:border-box;
+    display: inline-block;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+  }
+  .checkedCircle{
+    overflow: hidden;
+    background-image: url('../assets/images/0000_btn_afterCheck_s.svg');
+    height: 25px;
+    width: 25px;
+    box-sizing:border-box;
+    display: inline-block;
+  }
+}

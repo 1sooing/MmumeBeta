@@ -27,24 +27,6 @@
     float:left;
     margin-left:8%;
   }
-  .circle{
-    overflow: hidden;
-    background-image: url(../../assets/images/0000_btn_beforeCheck_s.svg);
-    height: 25px;
-    width: 25px;
-    box-sizing:border-box;
-    display: inline-block;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-  }
-  .checkedCircle{
-    overflow: hidden;
-    background-image: url(../../assets/images/0000_btn_afterCheck_s.svg);
-    height: 25px;
-    width: 25px;
-    box-sizing:border-box;
-    display: inline-block;
-  }
   .st-button{
     color: #57B4AA;
     border-color: #57B4AA;

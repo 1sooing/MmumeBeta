@@ -23,6 +23,9 @@ export class MygardenHomePage {
     this.navCtrl.pop();
   }
   test() {
+    this.navCtrl.push('MygardenMmumePage');
+  }
+  test2() {
     this.navCtrl.push('TestPage');
   }
 }

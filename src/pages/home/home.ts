@@ -69,11 +69,11 @@ export class HomePage {
     console.log('ionViewWillUnload MainPage');
   }
   clickMygarden() {
-     this.authService.afAuth.auth.onAuthStateChanged( (user) => {
+    this.authService.afAuth.auth.onAuthStateChanged( (user) => {
       if(user != null) {
         this.navCtrl.push('MygardenHomePage');
       } else {
-        this.navCtrl.push('MygardenHomePage');
+       this.navCtrl.push('TestPage');
       }
      });
   }
@@ -81,8 +81,7 @@ export class HomePage {
     alert('Group Garden');
   }
   clickPharmacy() {
-    //this.navCtrl.push('PharmacyHomePage');
-    this.authService.doLogout();
+    this.navCtrl.push('PharmacyHomePage');
   }
   clickBoard() {
     alert('Board');

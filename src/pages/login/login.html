@@ -23,7 +23,7 @@
         <input
           type="password"
           [ngClass]="(!password.valid && password.touched || errorCode == 'auth/wrong-password')? 'lg-input-invalid password':'lg-input password'"
-          placeholder="●●●●"
+          placeholder="●●●●●●"
           text-center
           ngModel
           name="password"
@@ -34,6 +34,7 @@
       </div>
       <div style="margin-top:30%;">
         <button
+          ion-button round outline
           type="submit"
           class="lg-circle"
           text-center
@@ -41,7 +42,6 @@
         </button>
       </div>
       <div *ngIf="(!email.valid && email.touched)||(!password.valid && password.touched)" class="lg-errorMessage">이메일이나 비밀번호 형식이 잘못되었습니다</div>
-      <div class="lg-errorMessage">{{errorMessage}}</div>
     </form>
   </div>
 </div>
