@@ -27,4 +27,16 @@ export class MygardenMmumePage {
   closeWindow() {
     this.navCtrl.pop();
   }
+  loadMmume(event) {
+    event.target.classList.add('gd-mmume-menu-focus');
+    this.slides.slideTo(0, 500, true);
+  }
+  loadCondition(event) {
+    event.target.classList.add('gd-mmume-menu-focus');
+    this.slides.slideTo(1, 500, true);
+  }
+  loadHistory(event) {
+    event.target.classList.add('gd-mmume-menu-focus');
+    this.slides.slideTo(2, 500, true);
+  }
 }

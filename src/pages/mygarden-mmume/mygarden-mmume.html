@@ -7,9 +7,9 @@
 
   <div class="gd-mmume-header-menu-wrapper">
     <ul class="gd-mmume-header-menus">
-      <li class="inline font-weight-400 right-padding-20">뮴</li>
-      <li class="inline font-weight-400 right-padding-20">상태</li>
-      <li class="inline font-weight-400">히스토리</li>
+      <li #mmume class="inline font-weight-400 right-margin-20 gd-mmume-menu-focus" (click)="loadMmume($event)">뮴</li>
+      <li #condition class="inline font-weight-400 right-margin-20" (click)="loadCondition($event)">상태</li>
+      <li #history class="inline font-weight-400" (click)="loadHistory($event)">히스토리</li>
     </ul>
   </div>
 </div>
