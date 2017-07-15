@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
+import { TestService } from '../../services/testService';
 /**
  * Generated class for the MygardenMmumePage page.
  *
@@ -14,11 +15,14 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 })
 export class MygardenMmumePage {
   @ViewChild(Slides) slides: Slides;
-
+  menuGroups: string[];
+  selectedItem: string = "뮴";
   constructor(
     public navCtrl: NavController
-    ,public navParams: NavParams) {
-
+    ,public navParams: NavParams
+    ,public testService: TestService) {
+    this.menuGroups = ["뮴","상태","히스토리"];
+    console.log(this.testService.items);
   }
 
   ionViewDidLoad() {
@@ -27,16 +31,22 @@ export class MygardenMmumePage {
   closeWindow() {
     this.navCtrl.pop();
   }
-  loadMmume(event) {
-    event.target.classList.add('gd-mmume-menu-focus');
-    this.slides.slideTo(0, 500, true);
+  clickMenu(event: any, item, index) {
+    event.preventDefault();
+    this.selectedItem = item;
+    this.slides.slideTo(index, 500, true);
   }
-  loadCondition(event) {
-    event.target.classList.add('gd-mmume-menu-focus');
-    this.slides.slideTo(1, 500, true);
-  }
-  loadHistory(event) {
-    event.target.classList.add('gd-mmume-menu-focus');
-    this.slides.slideTo(2, 500, true);
+  slideChanged() {
+    switch (this.slides.getActiveIndex()) {
+      case 0:
+        this.selectedItem = "뮴";
+        break;
+      case 1:
+        this.selectedItem = "상태";
+        break;
+      case 2:
+        this.selectedItem = "히스토리";
+        break;
+    }
   }
 }

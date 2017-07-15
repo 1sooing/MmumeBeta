@@ -31,7 +31,7 @@ export class PharmacyHomePage {
         console.log("complete logOut");
       },
       (error) => {
-        
+
       });
     this.navCtrl.popToRoot();
   }

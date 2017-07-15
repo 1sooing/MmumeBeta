@@ -34,7 +34,7 @@ export class HomePage {
   }
   ionViewDidEnter() {
     this.authService.afAuth.auth.onAuthStateChanged( (user) => {
-      if (user != null) {
+      if (user !== null) {
         //this.loadingCtrl.load(); - ERROR남 로그인 후 이미 사라진 페이지 에러
         if (user.emailVerified == true ) {
           this.isLogin = true;
@@ -70,7 +70,7 @@ export class HomePage {
   }
   clickMygarden() {
     this.authService.afAuth.auth.onAuthStateChanged( (user) => {
-      if(user != null) {
+      if(user !== null) {
         this.navCtrl.push('MygardenHomePage');
       } else {
        this.navCtrl.push('TestPage');

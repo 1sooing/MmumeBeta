@@ -10,10 +10,12 @@ import { HomePage } from '../pages/home/home';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from '../services/authService';
 import { LoadingService } from '../services/loadingService';
 import { MmumesService } from '../services/mmumesService';
 import { UsersSerivce } from '../services/usersSerivce';
+import { TestService } from '../services/testService';
 
 export const firebaseConfig={
   apiKey: "AIzaSyDBxXx4C3dQIe0EWBQTzWNrUavzx-Ja51E",
@@ -33,6 +35,7 @@ export const firebaseConfig={
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -48,6 +51,7 @@ export const firebaseConfig={
     LoadingService,
     MmumesService,
     UsersSerivce,
+    TestService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
