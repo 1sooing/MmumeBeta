@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
-import { TestService } from '../../services/testService';
+import { AngularFireDatabase } from 'angularfire2/database';
+
+import { testModel } from '../../models/testModel';
 /**
  * Generated class for the MygardenMmumePage page.
  *
@@ -15,14 +17,29 @@ import { TestService } from '../../services/testService';
 })
 export class MygardenMmumePage {
   @ViewChild(Slides) slides: Slides;
+  private firebaseURL = 'https://mmume-f390e.firebaseio.com';
   menuGroups: string[];
   selectedItem: string = "뮴";
+  public testModel = new testModel(-1,'',-1,'',-1,-1,'');
+
   constructor(
     public navCtrl: NavController
     ,public navParams: NavParams
-    ,public testService: TestService) {
+    ,public db: AngularFireDatabase) {
     this.menuGroups = ["뮴","상태","히스토리"];
-    console.log(this.testService.items);
+    db.object(this.firebaseURL + '/mmumesState/test1234')
+      .subscribe( (mmumesState) => {
+        Object.assign(this.testModel, <testModel>mmumesState)
+        console.log(this.testModel);
+      });
+    /* 리스트 방식 & http get */
+    //this.items = db.list(this.firebaseURL + '/mmumesState');
+    /*
+    this.http.get(this.firebaseURL + '/mmumesState/.json')
+      .map( (data: Response) => data.json() )
+      .subscribe( (data) => {console.log(data)})
+    */
+    /* 리스트 방식 & http get */
   }
 
   ionViewDidLoad() {

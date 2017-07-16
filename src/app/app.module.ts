@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthService } from '../services/authService';
 import { LoadingService } from '../services/loadingService';
 import { MmumesService } from '../services/mmumesService';
