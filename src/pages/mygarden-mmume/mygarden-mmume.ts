@@ -3,7 +3,10 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
+import { TestService } from '../../services/testService';
+
 import { testModel } from '../../models/testModel';
+
 /**
  * Generated class for the MygardenMmumePage page.
  *
@@ -21,17 +24,27 @@ export class MygardenMmumePage {
   menuGroups: string[];
   selectedItem: string = "뮴";
   public testModel = new testModel(-1,'',-1,'',-1,-1,'');
+  public state:number = 0;
+  public menuColor:number = 0;
+  public selectedCondition = 0;
 
   constructor(
     public navCtrl: NavController
     ,public navParams: NavParams
-    ,public db: AngularFireDatabase) {
+    ,public db: AngularFireDatabase
+    ,public testService: TestService) {
     this.menuGroups = ["뮴","상태","히스토리"];
+    this.testModel = this.testService.testModel;
+
+    this.state = this.testService.state;
+    /* 직접호출방법 not Serivce */
+    /*
     db.object(this.firebaseURL + '/mmumesState/test1234')
       .subscribe( (mmumesState) => {
         Object.assign(this.testModel, <testModel>mmumesState)
         console.log(this.testModel);
       });
+    */
     /* 리스트 방식 & http get */
     //this.items = db.list(this.firebaseURL + '/mmumesState');
     /*
@@ -41,6 +54,7 @@ export class MygardenMmumePage {
     */
     /* 리스트 방식 & http get */
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MygardenMmumePage');
@@ -54,16 +68,63 @@ export class MygardenMmumePage {
     this.slides.slideTo(index, 500, true);
   }
   slideChanged() {
+    this.selectedCondition = 0;
     switch (this.slides.getActiveIndex()) {
       case 0:
         this.selectedItem = "뮴";
+        this.menuColor = 0;
         break;
       case 1:
         this.selectedItem = "상태";
+        this.menuColor = 1;
         break;
       case 2:
         this.selectedItem = "히스토리";
+        this.menuColor = 2;
         break;
     }
+  }
+  getMyStyles() {
+    let myStyles;
+    switch (this.menuColor) {
+      case 0:
+        myStyles = {
+          'background-color': ''
+        };
+        break;
+      case 1:
+        myStyles = {
+          'background-color': '#e3fffe'
+        };
+        break;
+      case 2:
+        myStyles = {
+          'background-color': ''
+        };
+        break;
+      case 3:
+        myStyles = {
+          'background-color': '#ffe3dc'
+        };
+        break;
+      case 4:
+        myStyles = {
+          'background-color': '#ddd9ff'
+        };
+        break;
+    }
+    return myStyles;
+  }
+  changePageTemp() {
+    this.selectedCondition = 1;
+    this.menuColor = 3;
+  }
+  changePageWater() {
+    this.selectedCondition = 0;
+    this.menuColor = 1;
+  }
+  changePageLight() {
+    this.selectedCondition = 2;
+    this.menuColor = 4;
   }
 }

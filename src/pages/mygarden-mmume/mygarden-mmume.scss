@@ -1,4 +1,283 @@
 @import '../../theme/common';
+ion-slide {
+  align-items: flex-start !important;
+}
+/************** slide_page_1 **************/
+.slide_mmume {
+  width:100%;
+}
+.slide_mmume .slide_wrap {
+  padding:0 4.5%;
+  position:absolute;
+  top: 8%;
+  left: 2%;
+}
+.slide_mmume .lv {
+  position:absolute;
+}
+.slide_mmume .lv .lv_circle {
+  position:absolute;
+  z-index:100;
+  width: 70px;
+  height: 70px;
+  background-color: #7f47dd;
+  color:#fff;
+  font-size:0.8em;
+  font-weight:500;
+  vertical-align:middle;
+  line-height: 140%;
+  border-radius: 50%;
+}
+.slide_mmume .lv .lv_bar {
+  position:relative;
+  width:26px;
+  height:480px;
+  border:1px solid #7f47dd;
+  border-radius: 20px/20px;
+  margin-left: 22px;
+}
+.slide_mmume .lv .lv_bar .fill{
+  position:absolute;
+  bottom:0;
+  width:24px;
+  height:320px;
+  background: -webkit-linear-gradient(#9767e8, #f6afa3);
+  border-radius: 20px/20px;
+  margin-left: 0px;
+}
+.slide_mmume .mmume_mmume {
+  float:right;
+  padding-left: 10rem;
+}
+.slide_mmume .mmume_mmume .mmume_name {
+  font-size:0.9em;
+  font-weight:600;
+  color:#686ba3;
+}
+.slide_mmume .mmume_mmume .mmume_info {
+  font-size:0.75em;
+  font-weight:200;
+  color:#686ba3;
+  padding-top:10px;}
+.slide_mmume .mmume_char {
+  width:35%;
+  margin-left:0px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes slidein {
+  from { margin-top: 10%; }
+  to { margin-top: 100%; }
+}
+//.slide_mmume .mmume_mmume .line {position:relative;  width:100px; border-bottom:0.5px solid #686ba3 }
+/************** slide_page_1 **************/
+
+/************** slide2_page_2 **************/
+.slide_mmume2 {
+  width:100%;
+  height: 92vh;
+  background-color: white;
+}
+.slide2_water {
+  position: relative;
+  width:100%;
+  height: 92vh;
+}
+.slide2_water_menu {
+  width: 100%;
+  height: 15vh;
+  background-color: #e3fffe;
+}
+.slide2_image_wrapper {
+  position: absolute;
+}
+.slide2_main_water_button {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  top: 4rem;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 100;
+}
+.slide2_light_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  left: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide2_temp_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  right: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide2_water_level {
+  top: 8rem;
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  text-shadow: 2px 2px #959492;
+  display: inline;
+  width: 100px;
+}
+
+.slide2_water_odd_wave {
+  position: absolute;
+  width: 92%;
+}
+.slide2_water_even_wave {
+  position: absolute;
+  width: 100%;
+}
+/************** slide2_page_2 **************/
+
+/************** slide4_page_2 **************/
+.slide4_temp_wrapper {
+  position: relative;
+  width:100%;
+  height: 92vh;
+}
+.slide4_temp_menu {
+  width: 100%;
+  height: 15vh;
+  background-color: #ffe3dc;
+}
+.slide4_main_temp_button {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  top: 4rem;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 100;
+}
+.slide4_light_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  left: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide4_water_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  right: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide4_temp {
+  top: 8rem;
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  text-shadow: 2px 2px #959492;
+  display: inline;
+  width: 100px;
+}
+.slide4_temp_even_wave {
+  position: absolute;
+  width: 100%;
+}
+/************** slide4_page_2 **************/
+
+/************** slide5_page_2 **************/
+.slide5_light_wrapper {
+  position: relative;
+  width:100%;
+  height: 92vh;
+}
+.slide5_light_menu {
+  width: 100%;
+  height: 15vh;
+  background-color: #ddd9ff;
+}
+.slide5_main_light_button {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  top: 4rem;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 100;
+}
+.slide5_temp_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  left: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide5_water_button {
+  width: 7rem;
+  height: 7rem;
+  top: 60px;
+  right: 4.5%;
+  position: absolute;
+  z-index: 100;
+}
+.slide5_illumination {
+  top: 8rem;
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  text-shadow: 2px 2px #959492;
+  display: inline;
+  width: 100px;
+}
+.slide5_light_even_wave {
+  position: absolute;
+  width: 100%;
+}
+/************** slide5_page_2 **************/
+
+/************** slide3 **************/
+.slide_mmume3 {
+  width:100%;
+  height: 92vh;
+  background-color: white;
+}
+.slide3_history {
+  width:100%;
+  position: relative;
+}
+/************** slide3 **************/
 .platform-android {
   page-mygarden-mmume {
     @include page-background(#ffffff, $background-color);

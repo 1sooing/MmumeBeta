@@ -3,12 +3,27 @@
   page-mygarden-home {
     @include page-background(#ffffff, $background-color);
   }
+  .mygarden_wrap {
+    position: absolute;
+    width: 20%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .mygarden_wrap img {
+    margin-bottom:3px
+  }
+  .mygarden_mmstate {
+    text-align:center;
+    font-size:0.9em;
+    font-weight:400;
+    color:#5a7ad0
+  }
   .mygarden-home-mmumes-wrapper {
     position: relative;
     align-content: center;
   }
   .mygarden-home-mmumes {
-
   }
   .mygarden-home-mmume-single {
 
@@ -17,15 +32,11 @@
   }
   .mygarden-home-mygarden {
     position: absolute;
-    left:0;
-    right:0;
-    width: 73%;
-    height: auto;
-    margin-left:auto;
-    margin-right:auto;
-    bottom: 10%;
-    box-sizing: border-box;
-    opacity: 0.5;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 78%;
+    bottom: 15%;
+    opacity:0.9;
   }
   .test-class {
     position: absolute;

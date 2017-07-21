@@ -2,7 +2,7 @@
 <!-- 메뉴 밑줄 적절하게 길이 수정 -->
 <!-- Slide 할때 메뉴도 같이 클래스 고정 -->
 
-<div class="gd-mmume-header-wrapper">
+<div class="gd-mmume-header-wrapper" [ngStyle]="getMyStyles()">
   <div class="gd-mmume-backbutton-wrapper" (click)="closeWindow()">
     <img
       src="assets/images/0000_btn_back_blue.svg"
@@ -25,15 +25,79 @@
 <div class="gd-mmume-content-wrapper">
   <ion-slides class="gd-mmume-content" (ionSlideDidChange)="slideChanged()">
 
-    <ion-slide>
-      <div>{{testModel.battery}}</div>
+    <ion-slide class="slide_mmume">
+      <div class="slide_wrap">
+
+        <div class="lv">
+          <div class="lv_circle">
+            <div style="margin-top:13px">LV 8<br><span style="font-size:0.65em">340/540</span></div>
+          </div>
+          <div class="lv_bar"><div class="fill"></div></div>
+        </div>
+
+        <div class="mmume_mmume">
+          <div class="mmume_name">나의둥둥이</div>
+          <div class="line"></div>
+          <div class="mmume_info">+34일<br>홍콩야자</div>
+          <img *ngIf="state == 1" class="mmume_char" src="assets/images/mmume_good.gif" alt="" />
+          <img *ngIf="state == 2" class="mmume_char" src="assets/images/mmume_dry.gif" alt="" />
+          <img *ngIf="state == 3" class="mmume_char" src="assets/images/mmume_hot.gif" alt="" />
+          <img *ngIf="state == 4" class="mmume_char" src="assets/images/mmume_lack.gif" alt="" />
+          <img *ngIf="state == 5" class="mmume_char" src="assets/images/mmume_shinyhot.gif" alt="" />
+          <img *ngIf="state == -1" class="mmume_char" src="assets/images/mmume_bad.gif" alt="" />
+        </div>
+
+      </div>
+    </ion-slide>
+    <ion-slide class="slide_mmume2">
+      <div class="slide2_water" *ngIf = "selectedCondition == 0">
+        <div class="slide2_water_menu"></div>
+        <div class="slide2_light_button" (click)="changePageLight()"><img src="assets/images/2300_btn_light_s.svg" alt=""></div>
+        <div class="slide2_main_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_b.svg" alt=""></div>
+        <div class="slide2_temp_button" (click)="changePageTemp()"><img src="assets/images/2300_btn_temp_s.svg" alt=""/></div>
+        <div class="slide2_water_level">{{testModel.waterLevel}} %</div>
+        <div class="slide2_water_even_wave" style="bottom: 50px;"><img src="assets/images/2300_i_waterWave.png" alt=""/></div>
+        <div class="slide2_water_odd_wave" style="bottom: 30px;"><img src="assets/images/2300_i_waterWave.png" alt=""/></div>
+        <div class="slide2_water_even_wave" style="bottom: 10px;"><img src="assets/images/2300_i_waterWave.png" alt=""/></div>
+        <div class="slide2_water_odd_wave" style="bottom: -10px;"><img src="assets/images/2300_i_waterWave.png" alt=""/></div>
+        <div class="slide2_water_even_wave" style="bottom: -30px;"><img src="assets/images/2300_i_waterWave.png" alt=""/></div>
+      </div>
+
+      <div class="slide4_temp_wrapper" *ngIf = "selectedCondition == 1">
+        <div class="slide4_temp_menu"></div>
+        <div class="slide4_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_s.svg" alt=""></div>
+        <div class="slide4_main_temp_button" (click)="changePageTemp()"><img src="assets/images/2300_btn_temp_b.svg" alt=""></div>
+        <div class="slide4_light_button" (click)="changePageLight()"><img src="assets/images/2300_btn_light_s.svg" alt=""/></div>
+        <div class="slide4_temp">{{testModel.temperature}} ℃</div>
+
+        <div class="slide4_temp_even_wave" style="bottom: 30px;"><img src="assets/images/2300_i_tempWave.png" alt=""/></div>
+        <div class="slide4_temp_even_wave" style="bottom: 10px;"><img src="assets/images/2300_i_tempWave.png" alt=""/></div>
+        <div class="slide4_temp_even_wave" style="bottom: -10px;"><img src="assets/images/2300_i_tempWave.png" alt=""/></div>
+        <div class="slide4_temp_even_wave" style="bottom: -30px;"><img src="assets/images/2300_i_tempWave.png" alt=""/></div>
+      </div>
+
+      <div class="slide5_light_wrapper" *ngIf = "selectedCondition == 2">
+        <div class="slide5_light_menu"></div>
+        <div class="slide5_temp_button" (click)="changePageTemp()"><img src="assets/images/2300_btn_temp_s.svg" alt=""></div>
+        <div class="slide5_main_light_button" (click)="changePageLight()"><img src="assets/images/2300_btn_light_b.svg" alt=""></div>
+        <div class="slide5_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_s.svg" alt=""/></div>
+        <div class="slide5_illumination">{{testModel.illumination}} lux</div>
+
+        <div class="slide5_light_even_wave" style="bottom: 110px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: 90px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: 70px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: 50px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: 30px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: 10px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: -10px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+        <div class="slide5_light_even_wave" style="bottom: -30px;"><img src="assets/images/2300_i_lightWave.png" alt=""/></div>
+      </div>
     </ion-slide>
 
-    <ion-slide>
-    </ion-slide>
-
-    <ion-slide>
-      <h1>Slide 3</h1>
+    <ion-slide class="slide_mmume3">
+      <div class="slide3_history">
+        안녕하세요
+      </div>
     </ion-slide>
 
   </ion-slides>
