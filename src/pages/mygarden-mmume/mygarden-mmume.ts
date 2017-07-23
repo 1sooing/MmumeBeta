@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -27,16 +27,19 @@ export class MygardenMmumePage {
   public state:number = 0;
   public menuColor:number = 0;
   public selectedCondition = 0;
+  public baseWaterLevel:number = -80;
+  public baseTempLevel:number = -78;
 
   constructor(
     public navCtrl: NavController
     ,public navParams: NavParams
     ,public db: AngularFireDatabase
-    ,public testService: TestService) {
+    ,public testService: TestService
+    ,private zone: NgZone) {
     this.menuGroups = ["뮴","상태","히스토리"];
     this.testModel = this.testService.testModel;
-
     this.state = this.testService.state;
+
     /* 직접호출방법 not Serivce */
     /*
     db.object(this.firebaseURL + '/mmumesState/test1234')

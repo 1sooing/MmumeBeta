@@ -36,18 +36,23 @@ ion-slide {
   border-radius: 20px/20px;
   margin-left: 22px;
 }
+/* KKMMODIFICATION */
 .slide_mmume .lv .lv_bar .fill{
+  //bar height here
+  height:200px;
+
   position:absolute;
   bottom:0;
   width:24px;
-  height:320px;
   background: -webkit-linear-gradient(#9767e8, #f6afa3);
   border-radius: 20px/20px;
   margin-left: 0px;
 }
+/* KKMMODIFICATION */
 .slide_mmume .mmume_mmume {
-  float:right;
-  padding-left: 10rem;
+  position: absolute;
+  left:55%;
+  top: 8%;
 }
 .slide_mmume .mmume_mmume .mmume_name {
   font-size:0.9em;
@@ -58,10 +63,14 @@ ion-slide {
   font-size:0.75em;
   font-weight:200;
   color:#686ba3;
-  padding-top:10px;}
-.slide_mmume .mmume_char {
-  width:35%;
-  margin-left:0px;
+  padding-top:10px;
+}
+.mmume_anime_wrapper {
+  position: absolute;
+  left: 22%;
+  top: 19%;
+}
+.mmume_char {
   -webkit-animation:spin 4s linear infinite;
   -moz-animation:spin 4s linear infinite;
   animation:spin 4s linear infinite;
@@ -70,12 +79,13 @@ ion-slide {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 @keyframes slidein {
-  from { margin-top: 10%; }
-  to { margin-top: 100%; }
+  from { margin-top: 10%; margin-left: -10% }
+  to { margin-top: 100%; margin-left: 50% }
 }
 //.slide_mmume .mmume_mmume .line {position:relative;  width:100px; border-bottom:0.5px solid #686ba3 }
 /************** slide_page_1 **************/
@@ -140,14 +150,36 @@ ion-slide {
   display: inline;
   width: 100px;
 }
-
-.slide2_water_odd_wave {
+.slide2_water_state_message1 {
+  top: 16rem;
   position: absolute;
-  width: 92%;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #8ec3f4;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  display: inline;
 }
-.slide2_water_even_wave {
+.slide2_water_state_message2 {
+  top: 29.5rem;
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #21214c;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+}
+.slide2_water_wave {
   position: absolute;
   width: 100%;
+  margin-bottom: -7px;
+  transition: bottom 2s ease;
 }
 /************** slide2_page_2 **************/
 
@@ -203,9 +235,11 @@ ion-slide {
   display: inline;
   width: 100px;
 }
-.slide4_temp_even_wave {
+.slide4_temp_wave {
   position: absolute;
   width: 100%;
+  margin-bottom: -7px;
+  transition: bottom 2s ease;
 }
 /************** slide4_page_2 **************/
 
