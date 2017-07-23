@@ -51,7 +51,7 @@ ion-slide {
 /* KKMMODIFICATION */
 .slide_mmume .mmume_mmume {
   position: absolute;
-  left:55%;
+  left:45%;
   top: 8%;
 }
 .slide_mmume .mmume_mmume .mmume_name {
@@ -63,7 +63,16 @@ ion-slide {
   font-size:0.75em;
   font-weight:200;
   color:#686ba3;
-  padding-top:10px;
+  padding-top:2px;
+}
+.mmume_message {
+  position: absolute;
+  left: 37%;
+  top: 13%;
+  font-size:0.75em;
+  font-weight:400;
+  opacity: 0.7;
+  color:#686ba3;
 }
 .mmume_anime_wrapper {
   position: absolute;
@@ -298,6 +307,12 @@ ion-slide {
 .slide5_light_even_wave {
   position: absolute;
   width: 100%;
+}
+.slide5_light_wave {
+  position: absolute;
+  width: 100%;
+  margin-bottom: -7px;
+  transition: bottom 2s ease;
 }
 /************** slide5_page_2 **************/
 

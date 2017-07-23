@@ -45,11 +45,10 @@ export class TestService {
         Object.assign(this.testMmumeModel, <testMmumeModel>testMmume)
         console.log(this.testMmumeModel);
       });
-
     this.getState();
   }
 
   getState() {
-    this.state = 1;
+    this.state = 5;
   }
 }

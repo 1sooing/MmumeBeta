@@ -28,7 +28,8 @@ export class MygardenMmumePage {
   public menuColor:number = 0;
   public selectedCondition = 0;
   public baseWaterLevel:number = -80;
-  public baseTempLevel:number = -78;
+  public baseTempLevel:number = -80;
+  public baseLightLevel:number = -80;
 
   constructor(
     public navCtrl: NavController
@@ -102,7 +103,7 @@ export class MygardenMmumePage {
         break;
       case 2:
         myStyles = {
-          'background-color': ''
+          'background-color': '#7BDEDA'
         };
         break;
       case 3:
@@ -129,5 +130,8 @@ export class MygardenMmumePage {
   changePageLight() {
     this.selectedCondition = 2;
     this.menuColor = 4;
+  }
+  showMmumeMessage() {
+    this.testService.testModel.mmumeStateMessage="저는 잘크고 있어요. 엄빠 :)";
   }
 }

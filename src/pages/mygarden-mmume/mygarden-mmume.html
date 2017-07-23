@@ -29,7 +29,7 @@
       <div class="slide_wrap">
         <div class="lv">
           <div class="lv_circle">
-            <div style="margin-top:13px">LV 8<br><span style="font-size:0.65em">340/540</span></div>
+            <div style="margin-top:13px">LV 8<br><span style="font-size:0.65em">홍콩야자</span></div>
           </div>
           <div class="lv_bar">
             <div class="fill"></div>
@@ -37,21 +37,17 @@
         </div>
       </div>
       <div class="mmume_mmume">
-        <div class="mmume_name">나의둥둥이</div>
-        <div class="line"></div>
-        <div class="mmume_info">+34일<br>홍콩야자</div>
+        <div class="mmume_name">홍콩둥둥이<span class="mmume_info">&nbsp;&nbsp;&nbsp;&nbsp;+34일</span></div>
       </div>
+      <div class="mmume_message">{{testModel.mmumeStateMessage}}</div>
       <div class="mmume_anime_wrapper">
-        <img *ngIf="state == 1" src="assets/images/mmume_good.gif" alt="" />
-        <img *ngIf="state == 5" src="assets/images/mmume_shinyhot.gif" alt="" />
+        <img *ngIf="state == 1" src="assets/images/mmume_good.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="state == 5" src="assets/images/mmume_shinyhot.gif" alt=""  (click)="showMmumeMessage()"/>
+        <img *ngIf="state == 2" src="assets/images/mmume_dry.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="state == 3" src="assets/images/mmume_hot.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="state == 4" src="assets/images/mmume_lack.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="state == -1" src="assets/images/mmume_bad.gif" alt="" (click)="showMmumeMessage()" />
       </div>
-      <!--
-
-      <img *ngIf="state == 2" class="mmume_char" src="assets/images/mmume_dry.gif" alt="" />
-      <img *ngIf="state == 3" class="mmume_char" src="assets/images/mmume_hot.gif" alt="" />
-      <img *ngIf="state == 4" class="mmume_char" src="assets/images/mmume_lack.gif" alt="" />
-      <img *ngIf="state == -1" class="mmume_char" src="assets/images/mmume_bad.gif" alt="" />
-      -->
     </ion-slide>
 
     <ion-slide class="slide_mmume2">
@@ -78,7 +74,7 @@
         <div class="slide4_temp">{{testModel.temperature}} ℃</div>
 
         <div class="slide4_temp_wave" [ngStyle]="{'bottom.vh' : baseTempLevel + testModel.temperature}">
-          <img src="assets/images/condition_temp.gif" alt=""/>
+          <img src="assets/images/condition_temp.png" alt=""/>
         </div>
       </div>
 
@@ -89,7 +85,9 @@
         <div class="slide5_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_s.svg" alt=""/></div>
         <div class="slide5_illumination">{{testModel.illumination}} lux</div>
 
-        <div></div>
+        <div class="slide5_light_wave" [ngStyle]="{'bottom.vh' : baseLightLevel + (testModel.illumination / 10) }">
+          <img src="assets/images/condition_light.png" alt=""/>
+        </div>
       </div>
     </ion-slide>
 
