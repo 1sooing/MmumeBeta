@@ -41,12 +41,12 @@
       </div>
       <div class="mmume_message">{{testModel.mmumeStateMessage}}</div>
       <div class="mmume_anime_wrapper">
-        <img *ngIf="state == 1" src="assets/images/mmume_good.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="state == 5" src="assets/images/mmume_shinyhot.gif" alt=""  (click)="showMmumeMessage()"/>
-        <img *ngIf="state == 2" src="assets/images/mmume_dry.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="state == 3" src="assets/images/mmume_hot.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="state == 4" src="assets/images/mmume_lack.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="state == -1" src="assets/images/mmume_bad.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 1" src="assets/images/mmume_good.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 5" src="assets/images/mmume_shinyhot.gif" alt=""  (click)="showMmumeMessage()"/>
+        <img *ngIf="testModel.mmumeState == 2" src="assets/images/mmume_dry.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 3" src="assets/images/mmume_hot.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 4" src="assets/images/mmume_lack.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == -1" src="assets/images/mmume_bad.gif" alt="" (click)="showMmumeMessage()" />
       </div>
     </ion-slide>
 
@@ -98,9 +98,6 @@
     </ion-slide>
 
     <ion-slide class="slide_mmume3">
-      <div class="test_test">
-        <img *ngIf="state == 3" class="mmume_char" src="assets/images/mmume_hot.gif" alt="" />
-      </div>
     </ion-slide>
 
   </ion-slides>

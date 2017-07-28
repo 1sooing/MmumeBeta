@@ -9,6 +9,7 @@ export class testModel {
   waterStateMessage1: string;
   waterStateMessage2: string;
   mmumeStateMessage: string;
+  mmumeState: number;
   constructor(battery, email, illumination, serialNumber, temperature, waterLevel, date) {
     this.battery = battery;
     this.email = email;
@@ -20,5 +21,6 @@ export class testModel {
     this.waterStateMessage1 = "";
     this.waterStateMessage2 = "";
     this.mmumeStateMessage = "";
+    this.mmumeState = 1;
   }
 }
