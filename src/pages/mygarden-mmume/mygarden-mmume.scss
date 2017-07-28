@@ -250,6 +250,31 @@ ion-slide {
   margin-bottom: -7px;
   transition: bottom 2s ease;
 }
+.slide4_temp_state_message1 {
+  top: 16rem;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffe3dc;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  display: inline;
+}
+.slide4_temp_state_message2 {
+  top: 29.5rem;
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #21214c;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+}
 /************** slide4_page_2 **************/
 
 /************** slide5_page_2 **************/
@@ -313,6 +338,31 @@ ion-slide {
   width: 100%;
   margin-bottom: -7px;
   transition: bottom 2s ease;
+}
+.slide5_light_state_message1 {
+  top: 16rem;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ddd9ff;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
+  display: inline;
+}
+.slide5_light_state_message2 {
+  top: 29.5rem;
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #21214c;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 101;
 }
 /************** slide5_page_2 **************/
 

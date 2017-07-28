@@ -18,6 +18,7 @@ export class TestService {
     db.object( this.firebaseURL + '/mmumesState/test1234')
       .subscribe( (mmumesState) => {
         Object.assign(this.testModel, <testModel>mmumesState);
+
         if (this.testModel.waterLevel > 0 && this.testModel.waterLevel < 10) {
           this.testModel.waterStateMessage1 = "목말라요";
           this.testModel.waterStateMessage2 = "물이 너무 부족해요. 물 좀 주세요";
@@ -49,6 +50,6 @@ export class TestService {
   }
 
   getState() {
-    this.state = 5;
+    this.state = 1;
   }
 }

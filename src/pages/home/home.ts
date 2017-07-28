@@ -15,7 +15,7 @@ import { UsersSerivce } from '../../services/usersSerivce';
 })
 export class HomePage {
   public userInfo:userModel = new userModel('','',false,'','',0,'',false,'','','');
-  public isLogin: boolean = false;
+  public isLogin: boolean = true;
   public showSayingFlag:boolean = false;
   public showCloudFlag:boolean = false;
   public cssTopGarden: string = '0%';
@@ -53,6 +53,8 @@ export class HomePage {
         } else {
           //this.authService.doLogout(); 이 라인 키면 오류나는이유가 자꾸 자식이 부모를 호출함
         }
+      } else {
+        this.isLogin = false;
       }
       //this.loadingCtrl.dismiss(); - ERROR남 로그인 후 이미 사라진 페이지 에러
     });

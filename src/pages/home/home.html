@@ -1,6 +1,9 @@
 <div *ngIf="showCloudFlag" class="home-cloud-wrapper">
   <img src="assets/images/0000_i_cloud.png" alt="Hi there:)">
 </div>
+<div class="setting_wrapper">
+  <img src="assets/images/0000_btn_settingGreen.svg" alt="">
+</div>
 <div class="home-garden" [style.top]="cssTopGarden" >
   <div class="home-garden-map">
     <img src="assets/images/0000_i_myGarden.png"
@@ -25,7 +28,7 @@
          (click)="clickPharmacy()">
   </div>
   <div *ngIf="isLogin && showSayingFlag" class="home-garden-saying">
-    <p>{{ userInfo.id }}님 어서오세요 :)</p>
+    <p>{{ userInfo.id }}님 어서오세요.</p>
   </div>
 </div>
 

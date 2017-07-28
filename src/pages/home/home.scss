@@ -5,12 +5,19 @@
   }
   .home-cloud-wrapper {
     position: absolute;
-    top: 10%;
+    top: 15%;
     -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 1.5s; /* Firefox < 16 */
     -ms-animation: fadein 1.5s; /* Internet Explorer */
     -o-animation: fadein 1.5s; /* Opera < 12.1 */
     animation: fadein 1.5s;
+  }
+  .setting_wrapper {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 25px;
+    height: 25px;
   }
   .home-garden{
     position: relative;
@@ -68,6 +75,12 @@
   .home-content {
     position: relative;
     padding-top: 5%;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
   }
   .button-login {
     width: 60%;

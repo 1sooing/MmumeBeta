@@ -61,7 +61,7 @@
         <div class="slide2_water_state_message1">{{testModel.waterStateMessage1}}</div>
         <div class="slide2_water_state_message2">{{testModel.waterStateMessage2}}</div>
 
-        <div class="slide2_water_wave" [ngStyle]="{'bottom.vh' : baseWaterLevel + (testModel.waterLevel * 4 / 5)}">
+        <div class="slide2_water_wave" [ngStyle]="{'bottom.vh' : baseWaterLevel + (testModel.waterLevel / 17 * 80)}">
           <img src="assets/images/condition_wave.gif" alt=""/>
         </div>
       </div>
@@ -73,7 +73,10 @@
         <div class="slide4_light_button" (click)="changePageLight()"><img src="assets/images/2300_btn_light_s.svg" alt=""/></div>
         <div class="slide4_temp">{{testModel.temperature}} ℃</div>
 
-        <div class="slide4_temp_wave" [ngStyle]="{'bottom.vh' : baseTempLevel + testModel.temperature}">
+        <div class="slide4_temp_state_message1">{{testModel.waterStateMessage1}}</div>
+        <div class="slide4_temp_state_message2">{{testModel.waterStateMessage2}}</div>
+
+        <div class="slide4_temp_wave" [ngStyle]="{'bottom.vh' : baseTempLevel + (testModel.temperature / 50 * 80)}">
           <img src="assets/images/condition_temp.png" alt=""/>
         </div>
       </div>
@@ -85,7 +88,10 @@
         <div class="slide5_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_s.svg" alt=""/></div>
         <div class="slide5_illumination">{{testModel.illumination}} lux</div>
 
-        <div class="slide5_light_wave" [ngStyle]="{'bottom.vh' : baseLightLevel + (testModel.illumination / 10) }">
+        <div class="slide5_light_state_message1">{{testModel.waterStateMessage1}}</div>
+        <div class="slide5_light_state_message2">{{testModel.waterStateMessage2}}</div>
+
+        <div class="slide5_light_wave" [ngStyle]="{'bottom.vh' : baseLightLevel + (testModel.illumination / 1023 * 80) }">
           <img src="assets/images/condition_light.png" alt=""/>
         </div>
       </div>
