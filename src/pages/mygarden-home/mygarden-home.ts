@@ -7,6 +7,7 @@ import { TestService } from '../../services/testService';
 
 import { testMmumeModel } from '../../models/testMmumeModel';
 import { testModel } from '../../models/testModel';
+import { mmumeModel } from '../../models/mmumeModel';
 
 @IonicPage()
 @Component({
@@ -18,6 +19,7 @@ export class MygardenHomePage {
   public testMmumeModel = new testMmumeModel(-1,-1,'');
   public testModel = new testModel(-1,'',-1,'',-1,-1,'');
   public state: number = 0;
+  public mmumeModel = new mmumeModel();
 
   constructor(
      public navCtrl: NavController
@@ -27,6 +29,7 @@ export class MygardenHomePage {
     this.testMmumeModel = this.testService.testMmumeModel;
     this.testModel = this.testService.testModel;
     this.state = this.testService.state;
+    this.mmumeModel = this.testService.mmumeModel;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MygardenHomePage');

@@ -4,21 +4,23 @@ import { AngularFireDatabase } from 'angularfire2/database';
 /* model declaration */
 import { testModel } from '../models/testModel';
 import { testMmumeModel } from '../models/testMmumeModel';
+import { mmumeModel } from '../models/mmumeModel';
 
 @Injectable()
 export class TestService {
   private firebaseURL = 'https://mmume-f390e.firebaseio.com';
   public testModel = new testModel(-1,'',-1,'',-1,-1,'');
   public testMmumeModel =  new testMmumeModel(-1,-1,'');
-  public state: number = 0;
+  public state: number = -1;
+  public mmumeModel = new mmumeModel();
 
   constructor(
-     public db: AngularFireDatabase
+      public db: AngularFireDatabase
   ) {
     db.object( this.firebaseURL + '/mmumesState/test1234')
       .subscribe( (mmumesState) => {
         Object.assign(this.testModel, <testModel>mmumesState);
-
+        this.mmumeModel.mmumeState = this.testModel.mmumeState;
         if (this.testModel.waterLevel > 0 && this.testModel.waterLevel < 10) {
           this.testModel.waterStateMessage1 = "목말라요";
           this.testModel.waterStateMessage2 = "물이 너무 부족해요. 물 좀 주세요";
@@ -39,6 +41,9 @@ export class TestService {
           this.testModel.waterStateMessage1 = "너무 배불러요";
           this.testModel.waterStateMessage2 = "물이 너무 많아요. 줄기가 썩을지도 몰라요";
         }
+        console.log(this.mmumeModel.mmumeState);
+        console.log("안녕하세요 확인입니다.");
+        console.log(this.testModel);
       });
 
     db.object( this.firebaseURL + '/testMmume')
@@ -46,10 +51,5 @@ export class TestService {
         Object.assign(this.testMmumeModel, <testMmumeModel>testMmume)
         console.log(this.testMmumeModel);
       });
-    this.getState();
-  }
-
-  getState() {
-    this.state = 1;
   }
 }

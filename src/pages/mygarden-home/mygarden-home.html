@@ -10,6 +10,8 @@
   <img *ngIf="state == 4" class="mygarden_home_mm" src="assets/images/mmume_lack_stay.gif" alt="" (click)="test()"/>
   <img *ngIf="state == 5" class="mygarden_home_mm" src="assets/images/mmume_shinyhot_stay.gif" alt="" (click)="test()"/>
   <img *ngIf="state == -1" class="mygarden_home_mm" src="assets/images/mmume_bad_stay.gif" alt="" (click)="test()"/>
+  <div>{{state}}</div>
+  <div>{{mmumeModel.mmumeState}}</div>
   <div class="mygarden_mmstate">{{testMmumeModel.name}}<br>LV {{testMmumeModel.level}}</div>
 </div>
 <!-- 테스트 코드 -->
