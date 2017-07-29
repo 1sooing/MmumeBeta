@@ -41,12 +41,13 @@
       </div>
       <div class="mmume_message">{{testModel.mmumeStateMessage}}</div>
       <div class="mmume_anime_wrapper">
-        <img *ngIf="testModel.mmumeState == 1" src="assets/images/mmume_good.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="testModel.mmumeState == 5" src="assets/images/mmume_shinyhot.gif" alt=""  (click)="showMmumeMessage()"/>
-        <img *ngIf="testModel.mmumeState == 2" src="assets/images/mmume_dry.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="testModel.mmumeState == 3" src="assets/images/mmume_hot.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="testModel.mmumeState == 4" src="assets/images/mmume_lack.gif" alt="" (click)="showMmumeMessage()" />
-        <img *ngIf="testModel.mmumeState == -1" src="assets/images/mmume_bad.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 1" src="assets/images/mmume_good_move.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 2" src="assets/images/mmume_dry_move.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 3" src="assets/images/mmume_hot_move.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 4" src="assets/images/mmume_lack_move.gif" alt="" (click)="showMmumeMessage()" />
+        <img *ngIf="testModel.mmumeState == 5" src="assets/images/mmume_shinyhot_move.gif" alt=""  (click)="showMmumeMessage()"/>
+        <img *ngIf="testModel.mmumeState == 6" src="assets/images/mmume_cold_move.gif" alt=""  (click)="showMmumeMessage()"/>
+        <img *ngIf="testModel.mmumeState == -1" src="assets/images/mmume_bad_move.gif" alt="" (click)="showMmumeMessage()" />
       </div>
     </ion-slide>
 
@@ -73,8 +74,8 @@
         <div class="slide4_light_button" (click)="changePageLight()"><img src="assets/images/2300_btn_light_s.svg" alt=""/></div>
         <div class="slide4_temp">{{testModel.temperature}} ℃</div>
 
-        <div class="slide4_temp_state_message1">{{testModel.waterStateMessage1}}</div>
-        <div class="slide4_temp_state_message2">{{testModel.waterStateMessage2}}</div>
+        <div class="slide4_temp_state_message1">{{testModel.temperatureStateMessage1}}</div>
+        <div class="slide4_temp_state_message2">{{testModel.temperatureStateMessage2}}</div>
 
         <div class="slide4_temp_wave" [ngStyle]="{'bottom.vh' : baseTempLevel + (testModel.temperature / 50 * 80)}">
           <img src="assets/images/condition_temp.png" alt=""/>
@@ -88,8 +89,8 @@
         <div class="slide5_water_button" (click)="changePageWater()"><img src="assets/images/2300_btn_water_s.svg" alt=""/></div>
         <div class="slide5_illumination">{{testModel.illumination}} lux</div>
 
-        <div class="slide5_light_state_message1">{{testModel.waterStateMessage1}}</div>
-        <div class="slide5_light_state_message2">{{testModel.waterStateMessage2}}</div>
+        <div class="slide5_light_state_message1">{{testModel.illuminationStateMessage1}}</div>
+        <div class="slide5_light_state_message2">{{testModel.illuminationStateMessage2}}</div>
 
         <div class="slide5_light_wave" [ngStyle]="{'bottom.vh' : baseLightLevel + (testModel.illumination / 1023 * 80) }">
           <img src="assets/images/condition_light.png" alt=""/>

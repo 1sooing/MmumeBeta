@@ -39,7 +39,6 @@ export class MygardenMmumePage {
     ,private zone: NgZone) {
     this.menuGroups = ["뮴","상태","히스토리"];
     this.testModel = this.testService.testModel;
-    this.state = this.testService.state;
 
     /* 직접호출방법 not Serivce */
     /*

@@ -4,14 +4,13 @@
 
 <!-- 테스트 코드 -->
 <div class="mygarden_wrap">
-  <img *ngIf="state == 1" class="mygarden_home_mm" src="assets/images/mmume_good_stay.gif" alt="" (click)="test()"/>
-  <img *ngIf="state == 2" class="mygarden_home_mm" src="assets/images/mmume_dry_stay.gif" alt="" (click)="test()"/>
-  <img *ngIf="state == 3" class="mygarden_home_mm" src="assets/images/mmume_hot_stay.gif" alt="" (click)="test()"/>
-  <img *ngIf="state == 4" class="mygarden_home_mm" src="assets/images/mmume_lack_stay.gif" alt="" (click)="test()"/>
-  <img *ngIf="state == 5" class="mygarden_home_mm" src="assets/images/mmume_shinyhot_stay.gif" alt="" (click)="test()"/>
-  <img *ngIf="state == -1" class="mygarden_home_mm" src="assets/images/mmume_bad_stay.gif" alt="" (click)="test()"/>
-  <div>{{state}}</div>
-  <div>{{mmumeModel.mmumeState}}</div>
+  <img *ngIf="testModel.mmumeState == 1" class="mygarden_home_mm" src="assets/images/mmume_good_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == 2" class="mygarden_home_mm" src="assets/images/mmume_dry_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == 3" class="mygarden_home_mm" src="assets/images/mmume_hot_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == 4" class="mygarden_home_mm" src="assets/images/mmume_lack_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == 5" class="mygarden_home_mm" src="assets/images/mmume_shinyhot_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == 6" class="mygarden_home_mm" src="assets/images/mmume_cold_stay.gif" alt="" (click)="test()"/>
+  <img *ngIf="testModel.mmumeState == -1" class="mygarden_home_mm" src="assets/images/mmume_bad_stay.gif" alt="" (click)="test()"/>
   <div class="mygarden_mmstate">{{testMmumeModel.name}}<br>LV {{testMmumeModel.level}}</div>
 </div>
 <!-- 테스트 코드 -->
