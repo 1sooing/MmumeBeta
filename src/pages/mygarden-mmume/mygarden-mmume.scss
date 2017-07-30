@@ -376,6 +376,26 @@ ion-slide {
   width:100%;
   position: relative;
 }
+.slide3_menu {
+  width: 100%;
+  height: 15vh;
+  background-color: #DEEDC5;
+}
+.slide3_wrapper_mmume {
+  position: absolute;
+  top : 4.5vh;
+  width : 130px;
+  height: 130px;
+  left: 8vw;
+}
+.slide3_wrapper_edit_button {
+  position: absolute;
+  width : 72px;
+  height: 72px;
+  top : 9vh;
+  right: 4vw;
+  background-color: transparent;
+}
 /************** slide3 **************/
 .platform-android {
   page-mygarden-mmume {

@@ -1,4 +1,4 @@
-import { Component, ViewChild, NgZone } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -35,8 +35,7 @@ export class MygardenMmumePage {
     public navCtrl: NavController
     ,public navParams: NavParams
     ,public db: AngularFireDatabase
-    ,public testService: TestService
-    ,private zone: NgZone) {
+    ,public testService: TestService) {
     this.menuGroups = ["뮴","상태","히스토리"];
     this.testModel = this.testService.testModel;
 
@@ -102,7 +101,7 @@ export class MygardenMmumePage {
         break;
       case 2:
         myStyles = {
-          'background-color': '#7BDEDA'
+          'background-color': '#DEEDC5'
         };
         break;
       case 3:
