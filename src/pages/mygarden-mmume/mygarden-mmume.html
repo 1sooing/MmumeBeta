@@ -29,17 +29,17 @@
       <div class="slide_wrap">
         <div class="lv">
           <div class="lv_circle">
-            <div style="margin-top:13px">LV 8<br><span style="font-size:0.65em">홍콩야자</span></div>
+            <div style="margin-top:13px">LV {{level}}<br><span style="font-size:0.65em">홍콩야자</span></div>
           </div>
           <div class="lv_bar">
-            <div class="fill"></div>
+            <div class="fill" [ngStyle]="{'height.px' : exp}"></div>
           </div>
         </div>
       </div>
       <div class="mmume_mmume">
         <div class="mmume_name">홍콩둥둥이<span class="mmume_info">&nbsp;&nbsp;&nbsp;&nbsp;+34일</span></div>
       </div>
-      <div class="mmume_message">{{testModel.mmumeStateMessage}}</div>
+      <div *ngIf="flagMmumeMessage" class="mmume_message">{{testModel.mmumeStateMessage}}</div>
       <div class="mmume_anime_wrapper">
         <img *ngIf="testModel.mmumeState == 1" src="assets/images/mmume_good_move.gif" alt="" (click)="showMmumeMessage()" />
         <img *ngIf="testModel.mmumeState == 2" src="assets/images/mmume_dry_move.gif" alt="" (click)="showMmumeMessage()" />
@@ -111,8 +111,47 @@
         <img *ngIf="testModel.mmumeState == -1"  src="assets/images/mmume_bad_stay.gif" alt=""/>
       </div>
       -->
-      <div class="slide3_wrapper_edit_button"><img src="assets/images/2400_btn_edit_gray.svg" alt=""></div>
-      <div></div>
+      <div class="slide3_wrapper_edit_button">
+        <img src="assets/images/2400_btn_edit_gray.svg" alt="">
+      </div>
+
+      <div class="slide3_history_content_wrapper">
+        <div>
+          안녕하세요
+        </div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+      </div>
     </ion-slide>
 
   </ion-slides>

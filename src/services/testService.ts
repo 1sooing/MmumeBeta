@@ -4,12 +4,15 @@ import { AngularFireDatabase } from 'angularfire2/database';
 /* model declaration */
 import { testModel } from '../models/testModel';
 import { testMmumeModel } from '../models/testMmumeModel';
+import { touchModel } from '../models/touchModel';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class TestService {
   private firebaseURL = 'https://mmume-f390e.firebaseio.com';
   public testModel = new testModel(-1,'',-1,'',-1,-1,'');
   public testMmumeModel =  new testMmumeModel(-1,-1,'');
+  public touchModel = new touchModel();
   public isBad: number = 0;
 
   constructor(
@@ -107,37 +110,50 @@ export class TestService {
 
         /***** 뮴 상태 체크 로직 ******/
         if ( this.testModel.waterLevelState != 1 && this.testModel.illuminationState != 1) {
+          this.testModel.mmumeStateMessage = "뮴의 상태를 잘 체크해주세요.";
           this.testModel.mmumeState = -1; /* BAD */
         } else if (this.testModel.illuminationState != 1 && this.testModel.temperatureState != 1) {
+          this.testModel.mmumeStateMessage = "뮴의 상태를 잘 체크해주세요.";
           this.testModel.mmumeState = -1; /* BAD */
         } else if (this.testModel.temperatureState != 1 && this.testModel.waterLevelState != 1 ) {
+          this.testModel.mmumeStateMessage = "뮴의 상태를 잘 체크해주세요.";
           this.testModel.mmumeState = -1; /* BAD */
         } else if ( this.testModel.temperatureState == -1 ) {
+          this.testModel.mmumeStateMessage = "날씨가 좀 춥지 않나요?";
           this.testModel.mmumeState = 6; /* COLD */
         } else if ( this.testModel.temperatureState == 2 ) {
+          this.testModel.mmumeStateMessage = "으..... 덥다..";
           this.testModel.mmumeState = 5; /* HOT */
         } else if ( this.testModel.illuminationState == -1 ) {
+          this.testModel.mmumeStateMessage = "혹시, 지금 주무시고 계세요?";
           this.testModel.mmumeState = 4; /* LACK */
         } else if ( this.testModel.waterLevelState == -1 ) {
+          this.testModel.mmumeStateMessage = "제 뿌리가 잘 잠겼나 확인해주세요.";
           this.testModel.mmumeState = 2; /* DRY */
         } else {
+          this.testModel.mmumeStateMessage = "저는 잘 크고 있어요. 엄빠 :)";
           this.testModel.mmumeState = 1;
         }
         //this.testModel.waterLevelState
         //this.testModel.illuminationState
         //this.testModel.temperatureState
-        console.log(this.testModel.illuminationState);
-        console.log(this.testModel.waterLevelState);
-        console.log(this.testModel.temperatureState);
         /***** 뮴 상태 체크 로직 ******/
 
         //console.log(this.testModel);
       });
 
-    db.object( this.firebaseURL + '/testMmume')
+    db.object( this.firebaseURL + '/testMmume' )
       .subscribe( (testMmume) => {
         Object.assign(this.testMmumeModel, <testMmumeModel>testMmume)
         console.log(this.testMmumeModel);
       });
+  }
+
+  watchTouchEvent() :Observable<void> {
+    return this.db.object( this.firebaseURL + '/testTouchDB/1' )
+      .map( (touchData) => {
+        Object.assign(this.touchModel, <touchModel>touchData);
+        console.log("매핑");
+      })
   }
 }

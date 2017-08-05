@@ -30,6 +30,10 @@ export class MygardenMmumePage {
   public baseWaterLevel:number = -80;
   public baseTempLevel:number = -80;
   public baseLightLevel:number = -80;
+  public flagMmumeMessage:boolean = false;
+  public exp: number = 440;
+  public level: number = 8;
+  //경험치 기준점 460
 
   constructor(
     public navCtrl: NavController
@@ -38,6 +42,18 @@ export class MygardenMmumePage {
     ,public testService: TestService) {
     this.menuGroups = ["뮴","상태","히스토리"];
     this.testModel = this.testService.testModel;
+
+    this.testService.watchTouchEvent()
+      .subscribe( () => {
+        if ( this.testService.touchModel.type > 0 ) {
+          this.exp = this.exp + 20;
+          if ( this.exp > 460 ) {
+            this.level = this.level + 1;
+            this.exp = 25;
+          }
+        }
+        console.log("구독");
+      })
 
     /* 직접호출방법 not Serivce */
     /*
@@ -130,6 +146,14 @@ export class MygardenMmumePage {
     this.menuColor = 4;
   }
   showMmumeMessage() {
-    this.testService.testModel.mmumeStateMessage="저는 잘크고 있어요. 엄빠 :)";
+    this.flagMmumeMessage = true;
+    //KKMMODIFICATION
+
+    //KKMMODIFICATION
+    setTimeout(() => {
+      this.flagMmumeMessage = false;
+    }, 5000);
   }
+
+
 }
